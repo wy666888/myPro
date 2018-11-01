@@ -2,6 +2,7 @@ package com.test.tag;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -54,10 +55,12 @@ public class AuthDirective implements TemplateDirectiveModel {
   HttpServletRequest request = this.getRequest();
   String url = request.getServletPath();
   // 获取用户登录信息
-  UserInfo userInfo = this.getLoginUserInfo(request);
+//  UserInfo userInfo = this.getLoginUserInfo(request);
+  UserInfo userInfo = new UserInfo();
   if (userInfo != null) {
    // 获取用户菜单页面
-   MenuInfo menuInfo = this.menuInfoServiceImpl.getMenuInfo(url, userInfo.getRoleList());
+//   MenuInfo menuInfo = this.menuInfoServiceImpl.getMenuInfo(url, userInfo.getRoleList());
+	  MenuInfo menuInfo = new MenuInfo();
    if (menuInfo != null) {
     logger.info(JSON.toJSONString(menuInfo));
     // 输出授权后html内容到页面
@@ -90,7 +93,17 @@ public class AuthDirective implements TemplateDirectiveModel {
 
  private String parseHtml(String html, MenuInfo menuInfo, String spacetext) {
   StringBuilder sBuilder = new StringBuilder();
-  List<CtrlInfo> ctrlInfos = menuInfo.getCtrlInfos();
+  //查询菜单对应的按钮等
+//  List<CtrlInfo> ctrlInfos = menuInfo.getCtrlInfos();
+  List<CtrlInfo> ctrlInfos = new ArrayList<CtrlInfo>();
+  CtrlInfo info = new CtrlInfo();
+  info.setSelector("submit");
+  ctrlInfos.add(info);
+  
+  info = new CtrlInfo();
+  info.setSelector("audit");
+  ctrlInfos.add(info);
+  
   for (CtrlInfo ctrlInfo : ctrlInfos) {
    String autHtml = this.getAutHtml(ctrlInfo.getSelector(), html);
    sBuilder.append(autHtml.toLowerCase());
@@ -102,6 +115,7 @@ public class AuthDirective implements TemplateDirectiveModel {
 
  private String getAutHtml(String ctrlId, String html) {
   Parser parser = Parser.createParser(html, "UTF-8");
+  //资源选择器
   NodeFilter filter = new HasAttributeFilter("id", ctrlId.toUpperCase());
   try {
    NodeList nodes = parser.extractAllNodesThatMatch(filter);

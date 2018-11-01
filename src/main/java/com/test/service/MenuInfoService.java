@@ -6,7 +6,7 @@ public class MenuInfoService {
 
 	public MenuInfo getMenuInfo(String url, Object roleList) {
 		// TODO Auto-generated method stub
-		return null;
+		return new MenuInfo();
 	}
 
 }
