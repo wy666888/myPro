@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+function checkAge(age){
+	var flag = false;
+	if(isInteger(age)){
+		if(age<=0){
+			alert("您输入的数据不合法！");
+		}else{
+			flag = true;
+			alert("您的年龄为"+age+"岁");
+		}
+	}else{
+		alert("请输入数字！");
+	}
+	return flag;
+}
+var age = prompt("请输入您的年龄：","0");
+while(!checkAge(age)){
+	age = prompt("请输入您的年龄：",age);
+}
+</script>
+</body>
+</html>

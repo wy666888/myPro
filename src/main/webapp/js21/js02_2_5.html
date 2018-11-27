@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var comment = "静夜思李白床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+var partial = comment.substring(0,3);//标题
+partial = partial.bold();
+document.write("<p align=\"center\">");
+document.write(partial);
+//作者
+partial = comment.slice(3,5);
+document.write("<br/>");
+document.write(partial);
+//第一句
+partial = comment.slice(5,17);
+partial = partial.fontcolor("gray");
+document.write("<br/>");
+document.write(partial);
+//第一句
+partial = comment.slice(17,29);
+partial = partial.fontcolor("gray");
+document.write("<br/>");
+document.write(partial);
+document.write("</p>");
+document.write("===========================");
+document.write("<br/>");
+document.write("《世界之最》<br/>最遥远的地方：天涯海角<br/>最荒凉的地方：不毛之地<br/>最悬殊的区别：天壤之别<br/>最反常的气候：晴天霹雳<br/>最昂贵的稿费：一字千金<br/>最宽阔的胸怀：虚怀若谷<br/>最绝望的前途：山穷水尽<br/>最高的巨人：顶天立地<br/>最难做的饭：无米之炊<br/>最短的季节：一日三秋<br/>最长的一天：度日如年<br/>最困难的恢复：万劫不复<br/>最长的寿命：万寿无疆<br/>最有学问的人：博古通今<br/>最长的腿：一步登天<br/>最快的速度：风驰电掣<br/>冲得最高的气：气冲霄汉<br/>最吝啬的人：一毛不拔<br/>最艰难的争辩：理屈词穷<br/>最快的流水：一泻千里");
+</script>
+</body>
+</html>

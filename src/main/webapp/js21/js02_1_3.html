@@ -3,12 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="common.js"></script>
 </head>
 <body>
 <script type="text/javascript">
+
 document.write("八进制数值常量011输出为十进制："+011);
 document.write("<br/>");
-document.write("十六数值常量0xf输出为十进制："+0xf);
+document.write("十六进制数值常量0xf输出为十进制："+0xf);
+document.write("<br/>");
+var i = 0xa1;
+var j = 0xf2;
+var s = i+j;
+
+var k = 0123;
+var l = 071;
+var m = k+l;
+
+var t1 = 0.1;
+var t2 = 1.1;
+var t3 = 2e3;
+var t4 = 2e-3;
+var t5 = 0.1e2;
+var t6 = 0.1e-2;
+//document.write("<li>十六进制数"+i.toString(16)+"等于十进制数："+i+"<br/>");
+document.write(numToString(i,16));
+document.write(numToString(j,16));
+document.write(numToString(s,10));
+
+document.write(numToString(k,8));
+document.write(numToString(l,8));
+document.write(numToString(m,10));
+
+document.write(numToString(t1,10));
+document.write(numToString(t2,10));
+document.write(numToString(t3,10));
+document.write(numToString(t4,10));
+document.write(numToString(t5,10));
+document.write(numToString(t6,10));
+
+
 </script>
 </body>
 </html>

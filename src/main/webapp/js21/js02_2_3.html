@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var a = NaN;
+var b = "123";
+var c = 123;
+var d = 1.23;
+var e = "123ab";
+var f = "1.23ab";
+var g = "ab123";
+var h = "ab1.23";
+var j = "12ab3";
+var k = "1.2ab3";
+var s = [];
+s.push(a);
+s.push(b);
+s.push(c);
+s.push(d);
+s.push(e);
+s.push(f);
+s.push(g);
+s.push(h);
+s.push(j);
+s.push(k);
+//var ta = isNaN(a);
+//document.write("<li>a的值是否是NaN:"+isNaN(a)+"<br/>");
+var temp;
+for(var i in s){
+	temp = s[i];
+	document.write("<li>"+temp+"的值是否是NaN:"+isNaN(temp)+"<br/>");
+}
+	document.write("<li>====================<br/>");
+for(var i in s){
+	temp = s[i];
+	document.write("<li>"+temp+"解析为数值:"+parseInt(temp)+"<br/>");
+}
+	document.write("<li>====================<br/>");
+for(var i in s){
+	temp = s[i];
+	document.write("<li>"+temp+"解析为数值:"+parseFloat(temp)+"<br/>");
+}
+	document.write("<li>====================<br/>");
+	//document.write("<li>"+b+"解析为数值:"+parseInt(b)+"<br/>");
+	//document.write("<li>"+d+"解析为数值:"+parseFloat(d)+"<br/>");
+
+</script>
+</body>
+</html>
