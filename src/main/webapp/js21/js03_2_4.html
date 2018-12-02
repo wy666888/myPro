@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var nA = 10;
+	document.write("<li>全局作用范围的nA:"+nA);
+function funcA(){
+	//定义局部变量与全局变量同名时，局部作用域优先于全局作用域
+	//但是局部变量的变化不会对全局变量造成影响(应该是类似与java中的形参和实参的关系吧)
+	var nA = 20;
+	document.write("<li>局部作用范围的nA:"+nA);
+}
+function funcB(){
+	//未重新弄定义变量，直接对全局变量进行的操作
+	nA = 30;
+	document.write("<li>局部作用范围的nA:"+nA);
+}
+function funcC(){
+	//重新定义了局部变量，对全局变量没有影响
+	var nA = 20;
+	nA = 60;
+	document.write("<li>局部作用范围的nA:"+nA);
+}
+	document.write("<li>开始执行funcA:");
+funcA();
+	document.write("<li>执行funcA之后全局作用范围的nA:"+nA);
+	
+	document.write("<li>开始执行funcB:");
+funcB();
+	document.write("<li>执行funcB之后全局作用范围的nA:"+nA);
+	
+	document.write("<li>开始执行funcC:");
+funcC();
+	document.write("<li>执行funcC之后全局作用范围的nA:"+nA);
+
+</script>
+</body>
+</html>
