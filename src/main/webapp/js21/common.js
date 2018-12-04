@@ -109,3 +109,53 @@ function isInteger(num) {
 
   }
 
+/**数组的深层复制(使用concat)
+ * @param ary
+ * @returns
+ */
+function aryClone1(ary){
+	return ary.concat();
+}
+/**数组的深层复制(使用slice)
+ * @param ary
+ * @returns
+ */
+function aryClone2(ary){
+	return ary.slice();
+}
+/**数组的深层复制(使用遍历push)
+ * @param ary
+ * @returns
+ */
+function aryClone3(ary){
+	var dest = [];
+	var i;
+	for(i in ary){
+		dest.push(ary[i]);
+	}
+	return dest;
+}
+/**确定是对象的情况下可用
+ * @param obj
+ * @returns
+ */
+function objClone1(obj){
+	var dest = {};
+	var i;
+	for(i in obj){
+		dest[i] = obj[i];
+	}
+	return dest;
+}
+/**普遍适用（包括数组）
+ * @param obj
+ * @returns
+ */
+function objClone2(obj){
+	return JSON.parse(JSON.stringify(obj));
+}
+function arySort(ary){
+	return ary.sort(function(a,b){
+		return a-b;
+	});
+}

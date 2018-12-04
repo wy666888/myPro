@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+var oMyAry = new Array(13,55,37,33,45,9,60,21,10);
+var oMyAryCopy = aryClone3(oMyAry);
+
+document.write("<br>排序后："+arySort(oMyAryCopy));
+document.write("<br>排序前："+oMyAry);
+var i,j,temp;
+for(i in oMyAry){
+	for(j in oMyAry){
+		if(oMyAry[i]<oMyAry[j]){
+			temp = oMyAry[i];
+			oMyAry[i] = oMyAry[j];
+			oMyAry[j] = temp;
+		}
+	}
+document.write("<br>第"+i+"次排序后："+oMyAry);
+}
+document.write("<br>排序后："+oMyAry);
+//document.write("<br>排序后："+oMyAry.sort());
+
+</script>
+</body>
+</html>

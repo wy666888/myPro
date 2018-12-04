@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var data = {name:'小张'};
+//对象转化成字符串
+var dataStr1 = JSON.stringify(data);
+document.write("<br>对象转化成字符串："+dataStr1);
+data.name = '小李';
+document.write("<br>对象转化成字符串："+dataStr1);
+var dataStr2 = '{"name":"小张"}';
+//从字符串解析出对象(好像属性名/属性值必须使用"")
+var data2 = JSON.parse(dataStr2);
+data2.name = '小李';
+document.write("<br>字符串解析成对象："+data2);
+</script>
+</body>
+</html>
